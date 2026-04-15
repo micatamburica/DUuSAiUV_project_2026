@@ -14,6 +14,7 @@ The goals of the project is to predict the steering angle of the vehicle based o
 2. Prepare the dataset for training
 3. Train the CNN-LSTM model
 5. Evaluate the model
+   
 _More on main.py can be found down at the main.py section_
 
 ### **The model visual testing can be done with the given command:   <ins>python test.py</ins>**
