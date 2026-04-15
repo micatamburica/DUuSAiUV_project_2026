@@ -14,7 +14,7 @@ The goals of the project is to predict the steering angle of the vehicle based o
 2. Prepare the dataset for training
 3. Train the CNN-LSTM model
 5. Evaluate the model
-_More on main.py can be found down at the [[main.py](https://github.com/micatamburica/DUuSAiUV_project_2026/new/main?filename=README.md#mainpy)](https://github.com/micatamburica/DUuSAiUV_project_2026/tree/main?tab=readme-ov-file#mainpy) section_
+_More on main.py can be found down at the main.py section_
 
 ### **The model visual testing can be done with the given command:   <ins>python test.py</ins>**
 1. Test random image prediction
@@ -82,7 +82,7 @@ Training History (10 Epochs)
 | Min Error | -0.6968 | -34.84% |
 | Max Error | +1.0160 | +50.80% |
 
-<br />
+
 **EXPECTED OUTPUT FROM TEST.PY:**
 
 1. Test random image prediction
@@ -144,14 +144,18 @@ project/<br />
   ##### 2.1. create sequences (recommended SEQUENCE_LENGTH = 5 [5 - 10], not too short, not too long)
 
   before:<br />
+  ```
   center_path             left_path               right_path              steering_angle  throttle    reverse     speed<br />
   ..\IMG\center_1.jpg     ..\IMG\left_1.jpg       ..\IMG\right_1.jpg      0               0           0           0.000013<br />
+  ```
 
   after:<br />
+  ```
   image_paths                                                                                 steering_angle  dataset     camera<br />
   [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center<br />
   [..\left_1.jpg, ..\left_2.jpg, ..\left_3.jpg, ..\left_4.jpg, ..\lef_t5.jpg]                 0.00            make        left<br />
   [..\right_1.jpg, ..\right_2.jpg, ..\right_3.jpg, ..\right_4.jpg, ..\right_5.jpg]            0.00            make        right<br />
+  ```
 
   ##### 2.2. camera steering correction (recommended STEERING_CORRECTION = 0.2 [0.2 - 0.4], showed best results)
 
@@ -179,8 +183,10 @@ project/<br />
   ##### 3.1. sequence data generator
 
   before: Data Frame (? rows x 5 columns)<br />
+  ```
   image_paths                                                                                 steering_angle  dataset     camera<br />
   [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center<br />
+  ```
 
   after: Numpy Arrays (tuple Images, Angles)<br />
   Images.shape = (batch size, sequence length, height, width, RGB)    - 15 batches of 5 images (preprocessed)<br />
