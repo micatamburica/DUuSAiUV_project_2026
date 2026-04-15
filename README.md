@@ -14,7 +14,7 @@ The goals of the project is to predict the steering angle of the vehicle based o
 2. Prepare the dataset for training
 3. Train the CNN-LSTM model
 5. Evaluate the model
-_More on main.py can be found down at the [main.py](https://github.com/micatamburica/DUuSAiUV_project_2026/new/main?filename=README.md#mainpy) section_
+_More on main.py can be found down at the [[main.py](https://github.com/micatamburica/DUuSAiUV_project_2026/new/main?filename=README.md#mainpy)](https://github.com/micatamburica/DUuSAiUV_project_2026/tree/main?tab=readme-ov-file#mainpy) section_
 
 ### **The model visual testing can be done with the given command:   <ins>python test.py</ins>**
 1. Test random image prediction
@@ -82,6 +82,7 @@ Training History (10 Epochs)
 | Min Error | -0.6968 | -34.84% |
 | Max Error | +1.0160 | +50.80% |
 
+<br />
 **EXPECTED OUTPUT FROM TEST.PY:**
 
 1. Test random image prediction
@@ -94,6 +95,7 @@ Enter your choice (1-4):
 ---
 
 ### Project Structure
+```
 project/<br />
 │<br />
 ├── **main.py**                 MAIN TRAINING PIPELINE<br />
@@ -112,6 +114,7 @@ project/<br />
 │    └─ steering_angle.png      Data distribution (generated)<br />
 ├── graphs/<br />
      └─ steering_model.keras    Trained model (generated)<br />
+```
 
 ### Dependencies
 - Python 3.8+
