@@ -96,24 +96,24 @@ Enter your choice (1-4):
 
 ### Project Structure
 ```
-project/<br />
-│<br />
-├── **main.py**                 MAIN TRAINING PIPELINE<br />
-├──── data_preparation.py       Data loading and preprocessing<br />
-├──── data_generation.py        Data generator for training<br />
-├──── model.py                  CNN-LSTM model architecture<br />
-├──── train.py                  Training logic<br />
-├──── evaluate.py               Model evaluation<br />
-├──── plot_handling.py          Visualization utilities<br />
-├── **test.py**                 TESTING AND VISUALIZATION<br />
-├── functionalities.py          Lane change detection algorithm<br />
-│<br />
-├── graphs/<br />
-│    └─ training_history.png    Training curves (generated)<br />
-├── histograms/<br />
-│    └─ steering_angle.png      Data distribution (generated)<br />
-├── graphs/<br />
-     └─ steering_model.keras    Trained model (generated)<br />
+project/
+│
+├── **main.py**                 MAIN TRAINING PIPELINE
+├──── data_preparation.py       Data loading and preprocessing
+├──── data_generation.py        Data generator for training
+├──── model.py                  CNN-LSTM model architecture
+├──── train.py                  Training logic
+├──── evaluate.py               Model evaluation
+├──── plot_handling.py          Visualization utilities
+├── **test.py**                 TESTING AND VISUALIZATION
+├── functionalities.py          Lane change detection algorithm
+│
+├── graphs/
+│    └─ training_history.png    Training curves (generated)
+├── histograms/
+│    └─ steering_angle.png      Data distribution (generated)
+├── graphs/
+     └─ steering_model.keras    Trained model (generated)
 ```
 
 ### Dependencies
@@ -145,16 +145,16 @@ project/<br />
 
   before:<br />
   ```
-  center_path             left_path               right_path              steering_angle  throttle    reverse     speed<br />
-  ..\IMG\center_1.jpg     ..\IMG\left_1.jpg       ..\IMG\right_1.jpg      0               0           0           0.000013<br />
+  center_path             left_path               right_path              steering_angle  throttle    reverse     speed
+  ..\IMG\center_1.jpg     ..\IMG\left_1.jpg       ..\IMG\right_1.jpg      0               0           0           0.000013
   ```
 
   after:<br />
   ```
-  image_paths                                                                                 steering_angle  dataset     camera<br />
-  [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center<br />
-  [..\left_1.jpg, ..\left_2.jpg, ..\left_3.jpg, ..\left_4.jpg, ..\lef_t5.jpg]                 0.00            make        left<br />
-  [..\right_1.jpg, ..\right_2.jpg, ..\right_3.jpg, ..\right_4.jpg, ..\right_5.jpg]            0.00            make        right<br />
+  image_paths                                                                                 steering_angle  dataset     camera
+  [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center
+  [..\left_1.jpg, ..\left_2.jpg, ..\left_3.jpg, ..\left_4.jpg, ..\lef_t5.jpg]                 0.00            make        left
+  [..\right_1.jpg, ..\right_2.jpg, ..\right_3.jpg, ..\right_4.jpg, ..\right_5.jpg]            0.00            make        right
   ```
 
   ##### 2.2. camera steering correction (recommended STEERING_CORRECTION = 0.2 [0.2 - 0.4], showed best results)
@@ -184,8 +184,8 @@ project/<br />
 
   before: Data Frame (? rows x 5 columns)<br />
   ```
-  image_paths                                                                                 steering_angle  dataset     camera<br />
-  [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center<br />
+  image_paths                                                                                 steering_angle  dataset     camera
+  [..\center_1.jpg, ..\center_2.jpg, ..\center_3.jpg, ..\center_4.jpg, ..\center_5.jpg]       0.00            make        center
   ```
 
   after: Numpy Arrays (tuple Images, Angles)<br />
