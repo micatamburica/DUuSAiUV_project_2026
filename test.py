@@ -14,7 +14,8 @@ if __name__ == "__main__":
 
     # Data preparation for testing functionalities
     dataset_path = kagglehub.dataset_download("andy8744/udacity-self-driving-car-behavioural-cloning")
-    dataset_name = "self_driving_car_dataset_jungle"
+    dataset_name = "self_driving_car_dataset_make"
+    SEQUENCE_LENGTH = 5
 
     make_csv = os.path.join(dataset_path, dataset_name, "driving_log.csv")
     df = pd.read_csv(make_csv, header=None, names=['center_path', 'left_path', 'right_path', 'steering_angle', 'throttle', 'reverse', 'speed'])
@@ -27,7 +28,7 @@ if __name__ == "__main__":
             choice = input("\nEnter your choice (1-4): ").strip()
 
             if choice == '1':
-                FRAME_NUMBER = 9
+                FRAME_NUMBER = (SEQUENCE_LENGTH * 2) - 1
                 V = 0.5
                 break
                 
@@ -53,7 +54,7 @@ if __name__ == "__main__":
         start_index = random.randint(0, len(df) - FRAME_NUMBER)
         random_part = df.iloc[start_index:start_index + FRAME_NUMBER]
 
-        all_sequences = create_sequences(random_part)
+        all_sequences = create_sequences(random_part, sequence_length=SEQUENCE_LENGTH)
         center_sequences = all_sequences[all_sequences['camera'] == 'center'].reset_index(drop=True)
 
         make_folder = os.path.join(dataset_path, dataset_name)
@@ -73,11 +74,12 @@ if __name__ == "__main__":
         fig = plt.figure(figsize=(10, 6)) 
 
         # Visualization of the frames
-        for i in range(len(predictions) - 4):
-            
-            window = predictions[i:i+5]
+        for i in range(len(predictions) - (SEQUENCE_LENGTH - 1)):
+
+            window = predictions[i:i+SEQUENCE_LENGTH]
             result = detect_lane_change(window)
-            visualize_frame(center_sequences, i=i, predicted_angle=predictions[i+4], lane_change=result, speed=V)
+
+            visualize_frame(center_sequences, sequence_length=SEQUENCE_LENGTH, i=i, predicted_angle=predictions[i+(SEQUENCE_LENGTH-1)], lane_change=result, speed=V)
 
         plt.ioff()
         plt.show()
