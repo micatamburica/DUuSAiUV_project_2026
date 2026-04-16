@@ -221,3 +221,12 @@ project/
         └── Dense(1)  # Output: steering angle<br />
 
   Output: Single steering angle prediction (-1.0 to 1.0)
+
+  ---
+
+### References
+
+NVIDIA, End to End Learning for Self-driving Cars [https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf]
+Eddie Forson, Teaching Cars To Drive Using Deep Learning – Steering Angle Prediction [https://towardsdatascience.com/teaching-cars-to-drive-using-deep-learning-steering-angle-prediction-5773154608f2/]
+Kaggle, Udacity Self Driving Car - Behavioural Cloning [https://www.kaggle.com/datasets/andy8744/udacity-self-driving-car-behavioural-cloning/data]
+
