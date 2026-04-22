@@ -99,22 +99,26 @@ Enter your choice (1-4):
 ```
 project/
 │
-├── main.py                     MAIN TRAINING PIPELINE
-├──── data_preparation.py       Data loading and preprocessing
-├──── data_generation.py        Data generator for training
-├──── model.py                  CNN-LSTM model architecture
-├──── train.py                  Training logic
-├──── evaluate.py               Model evaluation
-├──── plot_handling.py          Visualization utilities
-├── test.py                     TESTING AND VISUALIZATION
-├── functionalities.py          Lane change detection algorithm
+│
+├──── README.md                 📄 PROJECT DESCRIPTION 
+├──── ProjectPresentation.pptx  📄 PROJECT PRESENTATION 
+│
+├── main.py                     ⚙️ MAIN TRAINING PIPELINE
+├──── data_preparation.py       🔧 Data loading and preprocessing
+├──── data_generation.py        🔧 Data generator for training
+├──── model.py                  🔧 CNN-LSTM model architecture
+├──── train.py                  🔧 Training logic
+├──── evaluate.py               🔧 Model evaluation
+├──── plot_handling.py          🔧 Visualization utilities
+├── test.py                     ⚙️ TESTING AND VISUALIZATION
+├── functionalities.py          🔧 Lane change detection algorithm
 │
 ├── graphs/
-│    └─ training_history.png    Training curves (generated)
+│    └─ training_history.png    📊 Training curves (generated)
 ├── histograms/
-│    └─ steering_angle.png      Data distribution (generated)
+│    └─ steering_angle.png      📊 Data distribution (generated)
 ├── graphs/
-     └─ steering_model.keras    Trained model (generated)
+     └─ steering_model.keras    📦 Trained model (generated)
 ```
 
 ### Dependencies
